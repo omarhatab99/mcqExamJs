@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <!-- web font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- end web font -->
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- end font-awesome -->
+    <!-- style -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- end style -->
+</head>
+<body>
+
+    <!-- Vertically centered modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Previous Question</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-center">Are you sure want previous question</h4>
+                    <h6 class="text-center text-muted">your answer will be removed and answer again</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="confirm-prev" type="button" class="btn btn-warning" data-bs-dismiss="modal">Previous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-app">
+        <div class="quiz-info">
+            <div class="name">name: <span></span></div>
+            <div class="count">Questions Count: <span>10</span></div>
+        </div>
+
+        <div class="quiz-area"></div>
+        <div class="answers-area"></div>
+        <div class="questions-list">
+            <dl class="data-list"></dl>
+            <div class="result"></div>
+        </div>
+        <p id="no-choose" class="form-small text-danger">no answer is chosen ...!</p>
+        <button id="submit-answer" class="btn btn-primary w-100 mt-3">Submit Answer</button>
+        <button id="back-answer" class="btn btn-light w-100 mt-2 disabled" data-bs-toggle="modal" data-bs-target="#staticBackdrop">previous Question</button>
+        <div class="bullets">
+            <div class="spans"></div>
+            <div class="count-down"></div>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
